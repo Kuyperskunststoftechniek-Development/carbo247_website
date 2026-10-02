@@ -1,6 +1,7 @@
 // All page content, one entry per full-screen section.
 // Strings may contain inline HTML (only <sub>, <span class="hl">, <span class="accent">).
 // Label/step positions are percentages of the background image (1672 × 941).
+// focusX/focusY (0–1) pick which part of the photo stays visible when it is cropped.
 
 import bg01 from '../assets/bg/01.webp'
 import bg02 from '../assets/bg/02.webp'
@@ -56,6 +57,7 @@ export const slides = [
     bg: bg02,
     accent: '#22d06a',
     focusX: 0.85,
+    focusY: 0.85,
     title: [{ text: 'THE CARBON' }, { text: 'CYCLE', accent: true }],
     intro:
       'For millions of years, carbon has circulated between the atmosphere, plants, animals and the soil.',
@@ -76,6 +78,7 @@ export const slides = [
     accent: '#ff8a1c',
     closingAccent: '#22d06a',
     focusX: 0.85,
+    focusY: 1,
     title: [{ text: 'HUMANITY' }, { text: 'CHANGED', accent: true }, { text: 'THE BALANCE', accent: true }],
     intro:
       'Human activity releases fossil carbon that has been stored underground for millions of years, adding it to the atmosphere faster than nature can remove it.',
@@ -176,6 +179,7 @@ export const slides = [
     bg: bg08,
     accent: '#2ee0b4',
     focusX: 1,
+    focusY: 0.6,
     titleCase: 'mixed',
     titleRule: true,
     title: [{ text: 'Designed' }, { parts: [{ text: 'for ' }, { text: 'circularity.', accent: true }] }],

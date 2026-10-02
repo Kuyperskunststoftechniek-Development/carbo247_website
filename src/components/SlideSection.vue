@@ -27,6 +27,7 @@ const style = computed(() => ({
   '--closing-accent': s.value.closingAccent || s.value.accent,
   '--shade': s.value.shade || 'rgba(3, 20, 14, 0.82)',
   '--fx': s.value.focusX ?? 0.5,
+  '--fy': s.value.focusY ?? 0.5,
 }))
 
 const lineParts = (line) => line.parts || [{ text: line.text, accent: line.accent }]
@@ -146,6 +147,13 @@ const pos = (l) => ({ left: `${l.x}%`, top: `${l.y}%` })
   isolation: isolate;
   background: #06140f;
 }
+/* On very wide, low screens the photo would lose too much top and bottom;
+   let the section grow a little instead. */
+@media (min-width: 861px) {
+  .slide {
+    min-height: max(100svh, 54vw);
+  }
+}
 
 /* Background "stage": covers the section like background-size: cover, but
    keeps its own 16:9 box so overlay labels stay locked to the photo. */
@@ -162,7 +170,7 @@ const pos = (l) => ({ left: `${l.x}%`, top: `${l.y}%` })
   width: var(--sw);
   height: var(--sh);
   left: calc((100cqw - var(--sw)) * var(--fx));
-  top: calc((100cqh - var(--sh)) * 0.5);
+  top: calc((100cqh - var(--sh)) * var(--fy));
   container-type: inline-size;
 }
 .slide__stage img {

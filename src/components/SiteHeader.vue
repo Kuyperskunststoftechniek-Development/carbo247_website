@@ -67,8 +67,6 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
   display: flex;
   align-items: center;
   gap: 2rem;
-  max-width: 1720px;
-  margin: 0 auto;
   padding: 1.6rem var(--gutter);
   transition: padding 0.35s ease;
 }

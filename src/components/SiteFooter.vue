@@ -53,8 +53,6 @@ import { contact } from '../data/slides.js'
   display: grid;
   grid-template-columns: auto auto auto 1fr;
   align-items: center;
-  max-width: 1720px;
-  margin: 0 auto;
   padding: 2.2rem var(--gutter);
 }
 .footer__inner > * {
