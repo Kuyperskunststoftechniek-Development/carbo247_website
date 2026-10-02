@@ -56,12 +56,17 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
   z-index: 50;
   transition: background-color 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
 }
-.header.is-scrolled,
-.header.is-open {
+.header.is-scrolled {
   background: rgba(4, 16, 20, 0.45);
   backdrop-filter: blur(12px) saturate(1.2);
   -webkit-backdrop-filter: blur(12px) saturate(1.2);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+/* Open mobile menu: solid full-screen panel so the page doesn't show through. */
+.header.is-open {
+  bottom: 0;
+  background: #06161a;
+  overflow-y: auto;
 }
 .header__inner {
   display: flex;
